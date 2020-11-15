@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <list>
-
+#include <mutex>
 #include <thread>
 using namespace std;
 
@@ -20,28 +20,58 @@ class A
             for(int i=0;i<100000;i++)
             {
                 cout<<"inmsgRecv()执行，插入"<<endl;
-                msgQueue.push_back(i);
+                
+                //{
+                    mutex1.lock();
+                    mutex2.lock();
+                    msgQueue.push_back(i);
+                    mutex2.unlock();
+                    mutex1.unlock();
+                //}
             }
         }
+
+        bool outmsgProc(int &commond)
+        {
+            lock_guard<std::mutex> myguard(mymutex);
+            if(!msgQueue.empty())
+            {
+                int command=msgQueue.front();
+                msgQueue.pop_front();
+                return true;
+            }
+            return false;
+        }
+
         void outmsgRecv()
         {
+            int commond=0;
             for(int i=0;i<100000;i++)
             {
-                if(!msgQueue.empty())
+                bool result=outmsgProc(commond);
+                if(result)
+                {
+                    cout<<"outmsgRecv()执行，取出一个元素"<<endl;
+                }
+                /*if(!msgQueue.empty())
                 {
                     int command=msgQueue.front();
                     msgQueue.pop_front();
 
-                }
+                }*/
                 else
                 {
-                     cout<<"outmsgRecv()执行为空，目前消息队列为空"<<i<<endl;
+                    cout<<"outmsgRecv()执行为空，目前消息队列为空"<<i<<endl;
                     msgQueue.push_back(i);
                 }
             }
         }
     private:
         list<int> msgQueue;
+        
+        mutex mymutex;
+        mutex mutex1;
+        mutex mutex2;
 };
 
 int main()
