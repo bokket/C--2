@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0f419862-f467-4f54-b3cd-e35404056ee6" name="默认的" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jsUvcgeuFQITISaWpc45IDP47Z" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/bokk_muduo" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f419862-f467-4f54-b3cd-e35404056ee6" name="默认的" comment="" />
+      <created>1604592524927</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604592524927</updated>
+      <workItem from="1604592526041" duration="1086000" />
+      <workItem from="1604593906934" duration="24000" />
+      <workItem from="1604593938372" duration="2204000" />
+      <workItem from="1604631104939" duration="303000" />
+      <workItem from="1604631906724" duration="371000" />
+      <workItem from="1604633111587" duration="17000" />
+      <workItem from="1604748297497" duration="2000" />
+      <workItem from="1605053418271" duration="41000" />
+      <workItem from="1605179584382" duration="1372000" />
+      <workItem from="1605537342727" duration="70000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1047" y="285" width="530" height="605" key="FileChooserDialogImpl" timestamp="1605537410823">
+      <screen x="0" y="27" width="1920" height="981" />
+    </state>
+    <state x="1047" y="285" width="530" height="605" key="FileChooserDialogImpl/0.27.1920.981@0.27.1920.981" timestamp="1605537410823" />
+  </component>
+</project>
