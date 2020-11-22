@@ -5,6 +5,7 @@
 #include "Node.h"
 #include <cmath>
 #include <iostream>
+
 double NumberNode::Calu() const
 {
     return number_;
@@ -40,6 +41,7 @@ double DivideNode::Calc() const
         return HUGE_VAL;
     }
 }
+
 
 double UMinusNode::Calu() const
 {

@@ -5,8 +5,19 @@
 #ifndef CALCULATOR_NODE_H
 #define CALCULATOR_NODE_H
 
+class Noncopyable
+{
+protected:
+    Noncopyable(){}
+    ~Noncopyable(){}
 
-class Node {
+private:
+    Noncopyable(const Noncopyable&);
+    const Noncopyable& operator=(const Noncopyable&);
+};
+
+class Node: private Noncopyable
+{
 public:
     virtual double Calc() const =0;
     virtual ~Node();
