@@ -16,7 +16,10 @@ BinaryNode::~BinaryNode()
     delete right_;
     delete left_;
 }
-
+UnaryNode::~UnaryNode()
+{
+    delete child_;
+}
 
 double AddNode::Calc() const
 {

@@ -10,6 +10,7 @@ using namespace std;
 
 int main()
 {
+    STATUS status=STATUS_OK;
     do {
         cout<<"> ";
         string buf;
@@ -19,5 +20,5 @@ int main()
         Parser parser(scanner);
         parser.Parse();
         parser.Calculate();
-    }
+    }while(status!=STATUS_QUIT);
 }
