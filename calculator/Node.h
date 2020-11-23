@@ -4,7 +4,7 @@
 
 #ifndef CALCULATOR_NODE_H
 #define CALCULATOR_NODE_H
-
+#include <vector>
 class Noncopyable
 {
 protected:
@@ -22,6 +22,7 @@ public:
     virtual double Calc() const =0;
     virtual ~Node();
 };
+
 class NumberNode : public Node
 {
 public:
@@ -48,6 +49,8 @@ protected:
     Node* const left_;
     Node* const right_;
 };
+
+/*
 class AddNode: public BinaryNode
 {
 public:
@@ -76,11 +79,45 @@ public:
 
     double Calc() const;
 };
+*/
+
 
 class UMinusNode: public UnaryNode
 {
 public:
     UMinusNode(Node* child):UnaryNode(child){}
     double Calu() const;
+};
+
+class MultipleNode: public Node
+{
+public:
+    MultipleNode(Node* node)
+    {
+        AppendChild(node, true);
+    }
+    void AppendChild(Node* node,bool positive)
+    {
+        childs_.push_back(node);
+        positives_.push_back(positive);
+    }
+    ~MultipleNode();
+protected:
+    vector<Node*> childs_;
+    vector<bool> positives_;
+};
+class SumNode: public MultipleNode
+{
+public:
+    SumNode(Node* node)
+        :MultipleNode(node){}
+    double Calc() const;
+};
+class ProductNode: public MultipleNode
+{
+public:
+    ProductNode(Node* node)
+        :MultipleNode(node){}
+    double Calc() const;
 };
 #endif //CALCULATOR_NODE_H
