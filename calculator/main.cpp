@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include <Scanner.h>
-#include <Parse.h>
+#include <Parser.h>
 using namespace std;
 
 int main()
@@ -19,6 +19,6 @@ int main()
         Scanner scanner(buf);
         Parser parser(scanner);
         parser.Parse();
-        parser.Calculate();
+        cout<<parser.Calculate()<<endl;
     }while(status!=STATUS_QUIT);
 }

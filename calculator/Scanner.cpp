@@ -4,7 +4,8 @@
 
 #include "Scanner.h"
 #include <ctype.h>
-Scanner::Scanner(const int &buf) :buf_(buf),curPos_(0)
+#include <string>
+Scanner::Scanner(const string& buf) :buf_(buf),curPos_(0)
 {
     Accept();
 }
@@ -13,13 +14,13 @@ double Scanner::Number() const
     return number_;
 }
 
-int Scanner::Token() const
+EToken Scanner::Token() const
 {
     return token_;
 }
 void Scanner::SkipWhite()
 {
-    while(isspace(buf[curPos_]))
+    while(isspace(buf_[curPos_]))
             ++curPos_;
 }
 void Scanner::Accept()

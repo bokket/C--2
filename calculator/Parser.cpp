@@ -6,13 +6,16 @@
 #include "Scanner.h"
 #include "Node.h"
 #include <cassert>
+#include <iostream>
+using namespace std;
+
 Parser::Parser(Scanner &scanner):scanner_(scanner),tree_(0)
 {
 
 }
 void Parser::Parse()
 {
-    Expr();
+    tree_=Expr();
 }
 Node* Parser::Expr()
 {
@@ -52,7 +55,40 @@ Node* Parser::Term()
 }
 Node* Parser::Factor()
 {
-    
+    Node* node;
+    EToken token=scanner_.Token();
+    if(token==TOKEN_LPARENTHESIS)
+    {
+        scanner_.Accept();//接受左括号
+        node=Expr();
+        if(scanner_.Token()==TOKEN_RPARENTHESIS)
+        {
+            scanner_.Accept();
+        }
+        else
+        {
+            status_=STATUS_ERROR;
+            //Tode:抛出异常
+            cout<<"missing parenthesis"<<endl;
+            node=0;//等于空指针
+        }
+    }
+    else if(token==TOKEN_NUMBER)
+    {
+        node=new NumberNode(scanner_.Number());
+        scanner_.Accept();
+    }
+    else if(token==TOKEN_MINUS)
+    {
+        scanner_.Accept();//接受符号
+        node = new UMinusNode(Factor());
+    }
+    else 
+    {
+        status_=STATUS_ERROR;
+        cout<<"not a vavild expression"<<endl;
+    }
+    return node;
 }
 double Parser::Calculate() const
 {
