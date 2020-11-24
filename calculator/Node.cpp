@@ -7,6 +7,9 @@
 #include <iostream>
 #include <vector>
 #include <std>
+#include "Storage.h"
+class Storage;
+
 double NumberNode::Calu() const
 {
     return number_;
@@ -99,4 +102,32 @@ double ProductNode::Calc() const
     return result;
 }
 
+double VariableNode::Calc() const
+{
+    double x=0.0;
+    if(storage_.isInit(id_))
+    {
+        x=storage_.GetValue(id_);
+    }
+    else
+    {
+        cout<<"Use of uninitialized variable."<<endl;
+    }
+    return 0;
+}
+bool VariableNode::IsLvalue() const
+{
+    return true;
+}
+void VariableNode::Assign()
+{
+    storage_.SetValue(id_,val);
+}
+double AssignNode::Calc() const
+{
+    double x=0.0;
+    x=right_->Calc();
+    left_->Assign(x);
+    return x;
+}
 

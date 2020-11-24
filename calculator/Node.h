@@ -20,6 +20,14 @@ class Node: private Noncopyable
 {
 public:
     virtual double Calc() const =0;
+    virtual bool IsLvalue() const
+    {
+        return false;
+    }
+    virtual void Assign(double)
+    {
+        assert(!"Assgin called incorrectly.");
+    }
     virtual ~Node();
 };
 
@@ -118,6 +126,26 @@ class ProductNode: public MultipleNode
 public:
     ProductNode(Node* node)
         :MultipleNode(node){}
+    double Calc() const;
+};
+class VariableNode: public Node
+{
+public:
+    VariableNode(unsigned int id,Stotage & storage)
+        :id_(id),storage_(storage){}
+    double Calc() const;
+    bool IsLvalue() const;
+    void Assign(double val);
+private:
+    const unsigned int id_;
+    Storage& storage_;
+};
+
+class AssignNode: public BinaryNode
+{
+public:
+    AddNode(Node* left,Node* right):BinaryNode(left,right){}
+
     double Calc() const;
 };
 #endif //CALCULATOR_NODE_H
