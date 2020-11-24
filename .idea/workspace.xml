@@ -28,14 +28,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f419862-f467-4f54-b3cd-e35404056ee6" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/signletion/Noncopyable.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signletion/Noncopyable.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signletion/Singletion.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/signletion/Singletion.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculator/Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/Node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculator/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/Node.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +57,9 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -88,7 +81,8 @@
       <workItem from="1605053418271" duration="41000" />
       <workItem from="1605179584382" duration="1372000" />
       <workItem from="1605537342727" duration="70000" />
-      <workItem from="1606223568580" duration="3572000" />
+      <workItem from="1606223568580" duration="3662000" />
+      <workItem from="1606229360728" duration="625000" />
     </task>
     <servers />
   </component>
@@ -105,11 +99,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1047" y="285" width="530" height="605" key="FileChooserDialogImpl" timestamp="1605537410823">
-      <screen x="0" y="27" width="1920" height="981" />
+    <state x="992" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606229379194">
+      <screen x="0" y="28" width="1920" height="982" />
+    </state>
+    <state x="992" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.1920.982@0.28.1920.982" timestamp="1606229379194" />
+    <state x="1047" y="286" width="530" height="605" key="FileChooserDialogImpl" timestamp="1606227230034">
+      <screen x="0" y="28" width="1920" height="982" />
     </state>
     <state x="1047" y="285" width="530" height="605" key="FileChooserDialogImpl/0.27.1920.981@0.27.1920.981" timestamp="1605537410823" />
+    <state x="1047" y="286" key="FileChooserDialogImpl/0.28.1920.982@0.28.1920.982" timestamp="1606227230034" />
   </component>
 </project>
