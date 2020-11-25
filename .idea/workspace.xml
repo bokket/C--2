@@ -28,6 +28,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f419862-f467-4f54-b3cd-e35404056ee6" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/boost/shared_ptr.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/boost/weaked_ptr.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,13 +58,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -82,7 +77,8 @@
       <workItem from="1605179584382" duration="1372000" />
       <workItem from="1605537342727" duration="70000" />
       <workItem from="1606223568580" duration="3662000" />
-      <workItem from="1606229360728" duration="625000" />
+      <workItem from="1606229360728" duration="1299000" />
+      <workItem from="1606299897390" duration="856000" />
     </task>
     <servers />
   </component>
