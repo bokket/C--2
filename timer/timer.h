@@ -39,6 +39,7 @@ public:
     void tick();
 
 private:
+    void add_timer(util_timer* timer,util_timer* lst_head);
     util_timer* head;
     util_timer* tail;
 };

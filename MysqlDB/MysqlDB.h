@@ -4,7 +4,15 @@
 
 #ifndef C_2_MYSQLDB_H
 #define C_2_MYSQLDB_H
-
+#include <mysql.h>
+#include <vector>
+#include <string>
+namespace DAL
+{
+    class MysqlDB;
+    class MysqlRecordset;
+    
+}
 
 
 class MysqlDB
