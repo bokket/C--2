@@ -3,6 +3,9 @@
 //
 
 #include <timer.h>
+#include <iostream>
+using namespace std;
+
 sort_timer_lst::~sort_timer_lst()
 {
     util_timer* tmp=head;
@@ -93,6 +96,9 @@ void sort_timer_lst::del_timer(util_timer* timer)
         delete timer;
         return;
     }
+    timer->prev->next=timer->next;
+    timer->next->prev=timer->prev;
+    delete timer;
 }
 void sort_timer_lst::tick()
 {
@@ -119,7 +125,7 @@ void sort_timer_lst::tick()
         tmp=head;
     }
 }
-void sort_timer_lst::add_timer(util_timer *timer)
+void sort_timer_lst::add_timer(util_timer *timer,util_timer* lst_head)
 {
     util_timer* prev=lst_head;
     util_timer* tmp=prev->next;
