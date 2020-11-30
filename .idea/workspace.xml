@@ -28,10 +28,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f419862-f467-4f54-b3cd-e35404056ee6" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/timer/wheel_timer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/timer/wheel_timer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/timer/timer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/timer/timer.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +87,7 @@
       <workItem from="1606300765490" duration="1239000" />
       <workItem from="1606396038999" duration="718000" />
       <workItem from="1606661785840" duration="2593000" />
-      <workItem from="1606711127492" duration="1009000" />
+      <workItem from="1606711127492" duration="1532000" />
     </task>
     <servers />
   </component>
