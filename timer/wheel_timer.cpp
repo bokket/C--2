@@ -50,7 +50,7 @@ tw_timer * time_wheel::add_timer(int timeout)
     }
     else
     {
-        timer->next-slots[ts];
+        timer->next=slots[ts];
         slots[ts]->prev=timer;
         slots[ts]=timer;
     }
