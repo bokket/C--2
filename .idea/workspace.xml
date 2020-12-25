@@ -28,21 +28,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f419862-f467-4f54-b3cd-e35404056ee6" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/TcpServer/TcpServer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TcpServer/TcpServer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locker/cond.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locker/lock.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/log.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/log.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protobuf/address.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protobuf/msg.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protobuf/promsg.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protobuf/useProtobuf.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/json_util.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/json_util.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vector/Vector.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vector/Vector.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/signletion/singleton.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/log.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/log/log.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/log.h" beforeDir="false" afterPath="$PROJECT_DIR$/log/log.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,9 +60,9 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -110,7 +99,8 @@
       <workItem from="1607877075974" duration="664000" />
       <workItem from="1607879258906" duration="103000" />
       <workItem from="1608732154262" duration="6524000" />
-      <workItem from="1608812467484" duration="5407000" />
+      <workItem from="1608812467484" duration="10946000" />
+      <workItem from="1608828705900" duration="4274000" />
     </task>
     <servers />
   </component>
