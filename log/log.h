@@ -90,6 +90,7 @@ public:
     uint32_t getCoreadId() const { return m_coreadId; }
     uint64_t getTime() const { return m_time; }
     string getContent() const { return m_stream.str(); }
+
     shared_ptr<Logger> getLogger() const { return m_logger; }
     LogLevel::Level getLevel() const { return m_level; }
 
@@ -115,7 +116,7 @@ private:
 class LogEventWrap
 {
 public:
-    LogEventWrap(LogEvent::ptr p);
+    LogEventWrap(LogEvent::ptr ptr);
     ~LogEventWrap();
     LogEvent::ptr getEvent() const { return m_event; }
     stringstream & getStringStream();
@@ -162,10 +163,10 @@ public:
     virtual ~LogPrint() {}
     virtual void log(shared_ptr<Logger> logger,LogLevel::Level level
                      ,LogEvent::ptr event)=0;
-    void serFmtter(LogFmtter::ptr val) { return m_fmtter=val }
+    void setFmtter(LogFmtter::ptr val) { m_fmtter=val; }
     LogFmtter::ptr getFmtter() const { return m_fmtter; }
 
-    void setLevel(LogLevel::Level level) { return m_level=level; }
+    void setLevel(LogLevel::Level level) { m_level=level; }
     LogLevel::Level getLevel() const { return m_level; }
 
 protected:

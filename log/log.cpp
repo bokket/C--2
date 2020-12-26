@@ -16,22 +16,212 @@ const char * LogLevel::ToString(LogLevel::Level level)
 {
 
 }
-LogEventWrap::LogEventWrap(LogEvent::ptr p)
-{}
-LogEventWrap::~LogEventWrap()
-{}
-stringstream & LogEventWrap::getStringStream()
-{}
-void LogEvent::fmt(const char *format, ...)
-{}
-void LogEvent::fmt(const char *format, va_list vaList)
+
+//
+LogEventWrap::LogEventWrap(LogEvent::ptr ptr)
+                            :m_event(ptr)
 {
 }
-LogEvent::LogEvent(shared_ptr <Logger> logger, LogLevel::Level level, const char *file, int32_t line, uint32_t msec,
+
+//
+LogEventWrap::~LogEventWrap()
+{
+    m_event->getLogger()->log(m_event->getLevel(),m_event);
+
+}
+
+
+stringstream & LogEventWrap::getStringStream()
+{
+    return m_event->getStringStream();
+}
+
+class MessgeFmtItem: public LogFmtter::FmtItem
+{
+public:
+    MessgeFmtItem(const string& str="")
+    {}
+    void fmt(ostream & os,Logger::ptr logger,LogLevel::Level,LogEvent::ptr event) override
+    {
+        os<<event->getContent();
+    }
+};
+
+class LevelFmtItem: public LogFmtter::FmtItem
+{
+public:
+    LevelFmtItem(const string& str="")
+    {}
+    void fmt(ostream & os,Logger::ptr logger,LogLevel::Level,LogEvent::ptr event) override
+    {
+        os<<event->getLevel();
+    }
+};
+
+class MsecFmtItem: public LogFmtter::FmtItem
+{
+public:
+    MsecFmtItem(const string& str="")
+    {}
+    void fmt(ostream & os,Logger::ptr logger,LogLevel::Level,LogEvent::ptr event) override
+    {
+        os<<event->getMsec();
+    }
+};
+
+class NameFmtItem: public LogFmtter::FmtItem
+{
+public:
+    NameFmtItem(const string & str="")
+    {}
+    void fmt(ostream & os,Logger::ptr logger,LogLevel::Level,LogEvent::ptr event) override
+    {
+        os<<event->getFile();
+    }
+};
+class ThreadIdFmtItem: public LogFmtter::FmtItem
+{
+public:
+    ThreadIdFmtItem(const string & str="")
+    {}
+    void fmt(ostream & os,Logger::ptr logger,LogLevel::Level,LogEvent::ptr event) override
+    {
+        os<<event->getThreadId();
+    }
+};
+class CoreadIdFmtItem: public LogFmtter::FmtItem
+{
+public:
+    CoreadIdFmtItem(const string & str="")
+    {}
+    void fmt(ostream & os,Logger::ptr logger,LogLevel::Level,LogEvent::ptr event) override
+    {
+        os<<event->getCoreadId();
+    }
+};
+
+
+//%Y-%m-%d
+//带世纪部分的十进制年份-十进制的月份-十进制表示的每月的第几天
+
+//%H:%M:%S
+//24小时制的小时:十时制表示的分钟:十进制的秒数
+class TimeFmtItem: public LogFmtter::FmtItem
+{
+public:
+    TimeFmtItem(const string & fmt="%Y-%m-%d %H:%M:%S")
+                :m_string(fmt)
+    {
+        if(m_string.empty())
+            m_string="%Y-%m-%d %H:%M:%S";
+    }
+    void fmt(ostream & os,Logger::ptr logger,LogLevel::Level,LogEvent::ptr event) override
+    {
+        struct tm tm;
+        time_t time=event->getTime();
+        localtime_r(&time,&tm);
+        char buf[128];
+        strftime(buf,sizeof(buf),m_string.c_str(),&tm);
+        os<<buf;
+    }
+private:
+    string m_string;
+};
+
+class FilenameFmtItem: public LogFmtter::FmtItem
+{
+public:
+    FilenameFmtItem(const string & str="")
+    {}
+    void fmt(ostream & os,Logger::ptr logger,LogLevel::Level,LogEvent::ptr event) override
+    {
+        os<<event->getFile();
+    }
+};
+
+class LineFmtItem: public LogFmtter::FmtItem
+{
+public:
+    LineFmtItem(const string & str="")
+    {}
+    void fmt(ostream & os,Logger::ptr logger,LogLevel::Level,LogEvent::ptr event) override
+    {
+        os<<event->getLine();
+    }
+};
+
+class NewLineFmtItem: public LogFmtter::FmtItem
+{
+public:
+    NewLineFmtItem(const string & str="")
+    {}
+    void fmt(ostream & os,Logger::ptr logger,LogLevel::Level,LogEvent::ptr event) override
+    {
+        os<<endl;
+    }
+};
+
+class StringFmtItem: public LogFmtter::FmtItem
+{
+public:
+    StringFmtItem(const string & str="")
+                :m_string(str)
+    {}
+    void fmt(ostream & os,Logger::ptr logger,LogLevel::Level,LogEvent::ptr event) override
+    {
+        os<<m_string;
+    }
+private:
+    string m_string;
+};
+
+class TabFmtItem: public LogFmtter::FmtItem
+{
+public:
+    TabFmtItem(const string & str="")
+    {}
+    void fmt(ostream & os,Logger::ptr logger,LogLevel::Level,LogEvent::ptr event) override
+    {
+        os<<"\t";
+    }
+};
+
+void LogEvent::fmt(const char *format, ...)
+{
+    va_list vl;
+    va_start(vl,format);
+    fmt(format,vl);
+    va_end(vl);
+}
+
+
+void LogEvent::fmt(const char *format, va_list vaList)
+{
+    char* buf=NULL;
+    int len=vasprintf(&buf,format,vaList);
+    if(len!=-1)
+    {
+        m_stream<<string(buf,len);
+        free(buf);
+    }
+}
+
+LogEvent::LogEvent(shared_ptr <Logger> logger, LogLevel::Level level
+                   , const char *file, int32_t line, uint32_t msec,
                    uint32_t thread_id, uint32_t coread_id, uint64_t time)
+                   :m_logger(logger)
+                   ,m_level(level)
+                   ,m_file(file)
+                   ,m_line(line)
+                   ,m_msec(msec)
+                   ,m_threadId(thread_id)
+                   ,m_coreadId(coread_id)
+                   ,m_time(time)
 {}
 Logger::Logger(const string &name)
-{}
+{
+
+}
 void Logger::addPrint(LogPrint::ptr printer)
 {}
 void Logger::delPrint(LogPrint::ptr printer)
@@ -60,4 +250,22 @@ void LogPrintStdout::log(Logger::ptr logger, LogLevel::Level level, LogEvent::pt
 {}
 LogFmtter::LogFmtter(const string &pattern)
 {}
+
+string LogFmtter::fmt(shared_ptr <Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+{}
+
+void LogFmtter::FmtItem::init()
+{
+
+}
+
+LoggerManager::LoggerManager()
+{
+
+}
+
+Logger::ptr LoggerManager::getLogger(const string &name)
+{
+
+}
 }

@@ -28,7 +28,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f419862-f467-4f54-b3cd-e35404056ee6" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/signletion/singleton.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/log.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/log/log.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/log.h" beforeDir="false" afterPath="$PROJECT_DIR$/log/log.h" afterDir="false" />
@@ -58,13 +57,6 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -100,7 +92,8 @@
       <workItem from="1607879258906" duration="103000" />
       <workItem from="1608732154262" duration="6524000" />
       <workItem from="1608812467484" duration="10946000" />
-      <workItem from="1608828705900" duration="4274000" />
+      <workItem from="1608828705900" duration="5064000" />
+      <workItem from="1608980587634" duration="5935000" />
     </task>
     <servers />
   </component>
