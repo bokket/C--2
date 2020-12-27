@@ -218,54 +218,126 @@ LogEvent::LogEvent(shared_ptr <Logger> logger, LogLevel::Level level
                    ,m_coreadId(coread_id)
                    ,m_time(time)
 {}
-Logger::Logger(const string &name)
+Logger::Logger(const string & name)
+            :m_name(name)
+            ,m_lever(LogLevel::DEBUG)
+            ,m_fmtter()
 {
-
 }
 void Logger::addPrint(LogPrint::ptr printer)
-{}
+{
+    if(!printer->getFmtter())
+        printer->setFmtter(m_fmtter);
+    else
+    {
+        m_printers.push_back(printer);
+    }
+    
+}
 void Logger::delPrint(LogPrint::ptr printer)
-{}
+{
+    for(auto it=m_printers.begin();it!=m_printers.end();it++)
+    {
+        if(*it==printer)
+        {
+            m_printers.erase(it);
+            break;
+        }
+    }
+}
 void Logger::log(LogLevel::Level level, LogEvent::ptr event)
-{}
+{
+    if(level>=m_lever)
+    {
+        auto it=shared_from_this();
+        for(auto & i:m_printers)
+            i->log(it,level,event);
+    }
+}
 void Logger::debug(LogEvent::ptr event)
-{}
+{
+    log(LogLevel::DEBUG,event);
+}
 void Logger::info(LogEvent::ptr event)
-{}
+{
+    log(LogLevel::INFO,event);
+}
 void Logger::warn(LogEvent::ptr event)
-{}
+{
+    log(LogLevel::WARN,event);
+}
 void Logger::error(LogEvent::ptr event)
-{}
+{
+    log(LogLevel::ERROR,event);
+}
 void Logger::fatal(LogEvent::ptr event)
-{}
+{
+    log(LogLevel::FATAL,event);
+}
 LogPrintFile::LogPrintFile(const string &filename)
-{}
+                            :m_filename(filename)
+{
+    reopen();
+}
 
 void LogPrintFile::log(Logger::ptr logger, LogLevel::Level level, LogEvent::ptr event)
-{}
+{
+    if(level>=m_level)
+        m_filestream<<m_fmtter->fmt(logger,level,event);
+}
 
 bool LogPrintFile::reopen()
-{}
+{
+    if(m_filestream)
+        m_filestream.close();
+
+    m_filestream.open(m_filename,ios::app);
+
+    return !!m_filestream;
+}
 void LogPrintStdout::log(Logger::ptr logger, LogLevel::Level level, LogEvent::ptr event)
-{}
+{
+    if(level>=m_level)
+        cout<<m_fmtter->fmt(logger,level,event);
+}
+
+
 LogFmtter::LogFmtter(const string &pattern)
-{}
+                    :m_parrent(pattern)
+{
+    init();
+}
 
 string LogFmtter::fmt(shared_ptr <Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-{}
+{
+    stringstream ss;
+    for(auto & i:m_items)
+    {
+        i->fmt(ss,logger,level,event);
+    }
+    return ss.str();
+}
 
-void LogFmtter::FmtItem::init()
+void LogFmtter::init()
 {
 
 }
 
 LoggerManager::LoggerManager()
 {
+    m_root.reset(new Logger);
+    m_root->addPrint(LogPrint::ptr (new LogPrintStdout));
 
 }
 
 Logger::ptr LoggerManager::getLogger(const string &name)
 {
-
+    auto it=m_loggers.find(name);
+    if(it==m_loggers.end())
+        return m_root;
+    else
+    {
+        return it->second;
+    }
 }
 }

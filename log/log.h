@@ -145,12 +145,11 @@ public:
         virtual ~FmtItem() {}
         virtual void fmt(ostream& os,shared_ptr<Logger> logger,LogLevel::Level level
                          ,LogEvent::ptr event)=0;
-        void init();
-
-    private:
-        string m_pattern;
-        vector<FmtItem::ptr> m_items;
     };
+    void init();
+private:
+    string m_pattern;
+    vector<FmtItem::ptr> m_items;
 
 };
 
