@@ -303,7 +303,7 @@ void LogPrintStdout::log(Logger::ptr logger, LogLevel::Level level, LogEvent::pt
 
 
 LogFmtter::LogFmtter(const string &pattern)
-                    :m_parrent(pattern)
+                    :m_pattern(pattern)
 {
     init();
 }
@@ -318,6 +318,9 @@ string LogFmtter::fmt(shared_ptr <Logger> logger, LogLevel::Level level, LogEven
     return ss.str();
 }
 
+
+//%xxx %xxx{xxx} %%
+//标准的日期串
 void LogFmtter::init()
 {
 
