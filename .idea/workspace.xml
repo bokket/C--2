@@ -54,7 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Data_Struct/keshe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -96,6 +96,8 @@
       <workItem from="1608998412826" duration="1146000" />
       <workItem from="1609056135288" duration="1240000" />
       <workItem from="1609083108462" duration="380000" />
+      <workItem from="1609170331187" duration="778000" />
+      <workItem from="1609253260284" duration="2364000" />
     </task>
     <servers />
   </component>
@@ -127,12 +129,12 @@
       <screen x="0" y="28" width="1920" height="982" />
     </state>
     <state x="910" y="165" width="1000" height="845" key="#新文件扩展名/0.28.1920.982@0.28.1920.982" timestamp="1608736868421" />
-    <state x="1047" y="286" width="459" height="465" key="FileChooserDialogImpl" timestamp="1609083487231">
+    <state x="1047" y="286" width="459" height="465" key="FileChooserDialogImpl" timestamp="1609215548635">
       <screen x="0" y="28" width="1920" height="982" />
     </state>
     <state x="1047" y="285" width="530" height="605" key="FileChooserDialogImpl/0.27.1920.981@0.27.1920.981" timestamp="1605537410823" />
     <state x="2211" y="188" width="459" height="465" key="FileChooserDialogImpl/0.28.1920.982/1920.0.1366.768@1920.0.1366.768" timestamp="1607857192740" />
-    <state x="1047" y="286" width="530" height="594" key="FileChooserDialogImpl/0.28.1920.982@0.28.1920.982" timestamp="1609083487231" />
+    <state x="1047" y="286" width="530" height="594" key="FileChooserDialogImpl/0.28.1920.982@0.28.1920.982" timestamp="1609215548635" />
     <state x="1920" y="163" width="530" height="594" key="FileChooserDialogImpl/0.28.3286.982@0.28.3286.982" timestamp="1606818823582" />
     <state width="1910" height="29" key="GridCell.Tab.0.bottom" timestamp="1608740532468">
       <screen x="0" y="28" width="1920" height="982" />
