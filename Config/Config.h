@@ -65,7 +65,41 @@ private:
 
 class Config
 {
-    
+public:
+    typedef map<string,ConfigVarBase::ptr> ConfigVarMap;
+private:
+    static ConfigVarMap s_datas;
+public:
+    template<class T>
+    static typename ConfigVar<T>::ptr Lookup(const string& name,const T & default_value,const string & description="")
+    {
+        auto tmp = Lookup<T>(name);
+        if (tmp) {
+            BOKKET_LOG_INFO(BOKKET_LOG_ROOT()) << "Lookup name=" << name << "exists";
+            return tmp;
+        }
+        if (name.find_first_not_of("abcdefghikjlmnopqrstuvwxyz") != string::npos)
+        {
+            BOKKET_LOG_INFO(BOKKET_LOG_ROOT()) << "Lookup name invalid" << name;
+            throw invalid_argument(name);
+        }
+
+        typename ConfigVar<T>::ptr v(new ConfigVar<T>(name, default_value, description));
+        s_dadas[name] = v;
+        return v;
+    }
+
+    template<class T>
+    static typename ConfigVar<T>::ptr Lookup(const string & name)
+    {
+        auto it=s_datas.find(name);
+        if(it==s_datas.end())
+            return nullptr;
+        return dynamic_pointer_cast<ConfigVar<T> >(it->second);
+    }
+
+    static void LoadFromYaml(const YAML::Node & root);
+    static ConfigVarBase::ptr LookupBase(const string& name);
 };
 }
 
