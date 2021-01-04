@@ -282,10 +282,8 @@ class Thread
 public:
     typedef shared_ptr<Thread> ptr;
 public:
-    Thread()
-    {}
-    ~Thread()
-    {}
+    Thread(function<void()> cb,const string & name);
+    ~Thread();
 
     pid_t getId() const { return m_id; }
 
