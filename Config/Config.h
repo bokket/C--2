@@ -10,7 +10,7 @@
 #include <sstream>
 #include <boost/lexical_cast.hpp>
 #include <yaml-cpp/yaml.h>
-#include "./log/log.h"
+#include "../log/log.h"
 
 using namespace std;
 namespace bokket

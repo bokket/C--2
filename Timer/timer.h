@@ -8,9 +8,11 @@
 #include <memory>
 #include <vector>
 #include <set>
-#include "./Thread/thread.h"
+#include "../Thread/thread.h"
 
 using namespace std;
+
+
 
 namespace bokket
 {
@@ -35,6 +37,29 @@ private:
     uint64_t m_ms=0;
     uint64_t m_next=0;
 
+    function<void()> m_cb;
+
+    TimerManager* m_manager=NULL;
+
+private:
+    struct Comparator
+    {
+        bool operator()(const Timer::ptr & lhs, const Timer::ptr & rhs) const;
+    };
+};
+
+class TimerManager
+{
+    friend class Timer;
+
+public:
+    typedef RWMutex RWMutexType;
+public:
+    TimerManager();
+    virtual TimerManager();
+
+
+    Timer::ptr addTimer(uint64_t)
 };
 }
 
