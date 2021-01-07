@@ -1,6 +1,7 @@
 #include "hash.h"
+#include <string.h>
+#include <stdlib.h>
 #include <math.h>
-
 static ht_item HT_DELETED_ITEM={NULL,NULL};
 static const int HT_PRIME_1 = 151;
 static const int HT_PRIME_2 = 163;
@@ -50,7 +51,7 @@ static ht_hash_table *ht_new_sized(const int base_size)
 
 static ht_item *ht_new_item(const char* k,const char* v)
 {
-    ht_item* i=(ht_item*)malloc(sizeof(ht_item));
+    ht_item* i=(ht_item*)xmalloc(sizeof(ht_item));
 
     i->key=strdup(k);
     i->value=strdup(v);
@@ -58,11 +59,11 @@ static ht_item *ht_new_item(const char* k,const char* v)
 
 ht_hash_table * ht_new()
 {
-    ht_hash_table* ht=(ht_hash_table*)malloc(sizeof(ht_hash_table));
+    ht_hash_table* ht=(ht_hash_table*)xmalloc(sizeof(ht_hash_table));
 
     ht->size=53;
     ht->count=0;
-    ht->items=calloc((size_t)ht->size,sizeof(ht_item*));
+    ht->items=xcalloc((size_t)ht->size,sizeof(ht_item*));
 
     return ht;
 }
@@ -140,19 +141,17 @@ void ht_insert(ht_hash_table* ht,const char* key,const char* value)
 
     ht_item *cur_item=ht->items[index];
 
-    int i=0;
+    int i=1;
     //while(cur_item!=NULL)
-    while(cur_item!=NULL)
+    while(cur_item!=NULL && cur_item!=&HT_DELETED_ITEM)
     {
-        if(cur_item!=&HT_DELETED_ITEM)
-        {
-            if(strcmp(cur_item->key,key)==0)
+         if(strcmp(cur_item->key,key)==0)
             {
                 ht_del_item(cur_item);
                 ht->items[index]=item;
                 return ;
             }
-        }
+
         index=ht_hash(item->key,ht->size,i);
         cur_item=ht->items[index];
         i++;
@@ -216,18 +215,22 @@ int main()
     ht_hash_table * ht=ht_new();
 
     //int count=0;
-    static char *key= {
+    /*static char *key= {
         "LvYunfan", "HuangYuntong", "RenHao", "ChenChunhan", "MiJishi", "ZhengJunjie",
         "LiuBoshuai", "GaoDongdong", "JiaSen", "JiangSichen", "YangShaojie", "WuDihao",
         "MaYushen", "GuoHengxing", "ChenJiashuo", "HouZihan", "SongYuhang", "FuTianyao",
         "ZhangYuankun", "WuXuanzhang", "WangYili", "HanZhongding", "QiChenyang", "LiuJia",
         "ZhaoXiangdong", "ZhangYi", "ZhangYaoTian", "ZhangHang", "SunXiaoyu", "HeMinghao"
-    };
+    };*/
 
-    for(int i=0;i<30;i++)
-    {
-        ht_insert(ht,key[i],"key");
+
+    for (int i = 0; i < 20000; i++) {
+        char key[10];
+        snprintf(key, 10, "%d", i);
+        ht_insert(ht, key, "value");
     }
+       // ht_insert(ht,key[i],"key");
+
 
     printf("-------------");
 

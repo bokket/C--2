@@ -433,4 +433,3 @@ Logger::ptr LoggerManager::getLogger(const string &name)
         return it->second;
     }
 }
-}
