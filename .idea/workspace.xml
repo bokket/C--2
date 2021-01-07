@@ -28,14 +28,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f419862-f467-4f54-b3cd-e35404056ee6" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/HashMap/HashMap.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HashMap/HashMap.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Log/logger.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Log/logger.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hash/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/Hash/a.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hash/hash.c" beforeDir="false" afterPath="$PROJECT_DIR$/Hash/hash.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hash/hash.h" beforeDir="false" afterPath="$PROJECT_DIR$/Hash/hash.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/log.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/log/log.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +59,9 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -123,7 +118,8 @@
       <workItem from="1609930867987" duration="2000" />
       <workItem from="1609942137819" duration="3000" />
       <workItem from="1609944127529" duration="2863000" />
-      <workItem from="1609988156961" duration="3611000" />
+      <workItem from="1609988156961" duration="6790000" />
+      <workItem from="1610025151902" duration="1148000" />
     </task>
     <servers />
   </component>
