@@ -3,6 +3,8 @@
 //
 
 #include "logger.h"
+#include <json-c/json.h>
+
 
 
 const char* LevelString[5]={"DEBUG","INFO","WARNING","ERROR","FATAL"};

@@ -27,7 +27,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f419862-f467-4f54-b3cd-e35404056ee6" name="默认的" comment="" />
+    <list default="true" id="0f419862-f467-4f54-b3cd-e35404056ee6" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/logger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Log/logger.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,7 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/LeetCode" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -110,6 +113,11 @@
       <workItem from="1609988156961" duration="6790000" />
       <workItem from="1610025151902" duration="1148000" />
       <workItem from="1610178703635" duration="604000" />
+      <workItem from="1610870453439" duration="611000" />
+      <workItem from="1610950529297" duration="1384000" />
+      <workItem from="1611083683528" duration="1223000" />
+      <workItem from="1611134309201" duration="19000" />
+      <workItem from="1612418363642" duration="66000" />
     </task>
     <servers />
   </component>
@@ -141,13 +149,15 @@
       <screen x="0" y="28" width="1920" height="982" />
     </state>
     <state x="910" y="165" width="1000" height="845" key="#新文件扩展名/0.28.1920.982@0.28.1920.982" timestamp="1609765083661" />
-    <state x="1047" y="286" width="459" height="465" key="FileChooserDialogImpl" timestamp="1609679744077">
-      <screen x="0" y="28" width="1920" height="982" />
+    <state x="1080" y="305" width="459" height="470" key="FileChooserDialogImpl" timestamp="1612418427666">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state x="1047" y="285" width="530" height="605" key="FileChooserDialogImpl/0.27.1920.981@0.27.1920.981" timestamp="1605537410823" />
     <state x="2211" y="188" width="459" height="465" key="FileChooserDialogImpl/0.28.1920.982/1920.0.1366.768@1920.0.1366.768" timestamp="1607857192740" />
     <state x="1047" y="286" width="530" height="594" key="FileChooserDialogImpl/0.28.1920.982@0.28.1920.982" timestamp="1609679744077" />
     <state x="1920" y="163" width="530" height="594" key="FileChooserDialogImpl/0.28.3286.982@0.28.3286.982" timestamp="1606818823582" />
+    <state x="1080" y="305" key="FileChooserDialogImpl/72.28.1848.1052@72.28.1848.1052" timestamp="1612418427666" />
+    <state x="1080" y="289" width="459" height="470" key="FileChooserDialogImpl/72.28.1848.992@72.28.1848.992" timestamp="1611134326028" />
     <state width="960" height="354" key="GridCell.Tab.0.bottom" timestamp="1609950931340">
       <screen x="0" y="28" width="1920" height="982" />
     </state>
