@@ -12,7 +12,7 @@ typedef int Rank;
 
 
 #include <algorithm>
-
+#include <iostream>
 template<typename T>
 class Vector
 {
@@ -28,9 +28,31 @@ public:
     Vector(Vector<T> const& V) { copyFrom(V._elem,0,V._size); }
     ~Vector() { delete [] _elem; }
 
+    Rank insert(Rank r,T const& e);
+    Rank insert(T const& e) { return insert(_size,e); }
 
+    int Remove(Rank lo,Rank hi);
+    T Remove(Rank r);
+
+    Rank find(T const & e,Rank lo,Rank hi) const;
+
+    int deduplicate();
+    //int uniquify();
+
+    template<typename VST>
+    void traverse(VST&);
+public:
+    T & operator[] (Rank r) const;
 protected:
     void copyFrom(T const * A,Rank lo,Rank hi);
+
+    void expand();
+    void shrink();
+
+    Vector<T> & operator=(Vector<T> const &);
+
+    Rank size() const { return _size; }
+
 
 private:
     Rank _size;
