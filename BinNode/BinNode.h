@@ -8,6 +8,7 @@
 
 #include <memory>
 #include <stack>
+#include <queue>
 #define BinNodePosi(T) BinNode<T>*
 #define stature(p) ((p) ? p->height : -1 )
 typedef enum
@@ -40,8 +41,8 @@ public:
     BinNodePosi(T) succ();
 
 public:
-    //template<typename VST>
-    //void travLevel(VST& );
+    template<typename VST>
+    void travLevel(VST& );
 
     template <typename VST>
     void travPre ( VST& visit); //子树先序遍历

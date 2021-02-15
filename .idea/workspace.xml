@@ -58,6 +58,17 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RunAnythingCache">
+    <myKeys>
+      <visibility group="Gradle tasks" flag="true" />
+      <visibility group="Grunt tasks" flag="true" />
+      <visibility group="Gulp tasks" flag="true" />
+      <visibility group="Recent projects" flag="true" />
+      <visibility group="Run configurations" flag="true" />
+      <visibility group="npm" flag="true" />
+      <visibility group="yarn" flag="true" />
+    </myKeys>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
@@ -127,7 +138,7 @@
       <workItem from="1611134309201" duration="19000" />
       <workItem from="1612418363642" duration="66000" />
       <workItem from="1613232897650" duration="1333000" />
-      <workItem from="1613320384161" duration="11365000" />
+      <workItem from="1613320384161" duration="12414000" />
     </task>
     <servers />
   </component>

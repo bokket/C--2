@@ -32,6 +32,26 @@ int BinNode<T>::size()
 
 template <typename T>
 template <typename VST>
+void BinNode<T>::travLevel(VST & visit)
+{
+    queue<BinNodePosi(T)> Q;
+    Q.push(this);
+
+    while(!Q.empty())
+    {
+        BinNodePosi(T) x=Q.pop();
+        visit(x->data);
+
+        if(x->lc)
+            Q.push(x->lc);
+        if(x->rc)
+            Q.push(x->rc);
+    }
+}
+
+
+template <typename T>
+template <typename VST>
 void BinNode<T>::travIn(VST & visit)
 {
     travIn_R(this,visit);
