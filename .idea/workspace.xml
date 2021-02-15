@@ -28,12 +28,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f419862-f467-4f54-b3cd-e35404056ee6" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/BinNode/BinNode.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BinNode/BinNode.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BinNode/BinTree.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BinNode/BinTree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vector/Vector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/vector/Vector.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vector/Vector.h" beforeDir="false" afterPath="$PROJECT_DIR$/vector/Vector.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vector/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/vector/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinNode/BinNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/BinNode/BinNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinNode/BinNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/BinNode/BinNode.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +59,13 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -123,7 +129,7 @@
       <workItem from="1611134309201" duration="19000" />
       <workItem from="1612418363642" duration="66000" />
       <workItem from="1613232897650" duration="1333000" />
-      <workItem from="1613320384161" duration="1745000" />
+      <workItem from="1613320384161" duration="9385000" />
     </task>
     <servers />
   </component>
@@ -164,25 +170,33 @@
     <state x="1920" y="163" width="530" height="594" key="FileChooserDialogImpl/0.28.3286.982@0.28.3286.982" timestamp="1606818823582" />
     <state x="1080" y="305" key="FileChooserDialogImpl/72.28.1848.1052@72.28.1848.1052" timestamp="1612418427666" />
     <state x="1080" y="289" width="459" height="470" key="FileChooserDialogImpl/72.28.1848.992@72.28.1848.992" timestamp="1611134326028" />
-    <state width="960" height="354" key="GridCell.Tab.0.bottom" timestamp="1609950931340">
-      <screen x="0" y="28" width="1920" height="982" />
+    <state width="1848" height="427" key="GridCell.Tab.0.bottom" timestamp="1613381993164">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state width="960" height="354" key="GridCell.Tab.0.bottom/0.28.1920.982@0.28.1920.982" timestamp="1609950931340" />
     <state width="1366" height="12" key="GridCell.Tab.0.bottom/0.28.3286.982@0.28.3286.982" timestamp="1606818824505" />
-    <state width="960" height="354" key="GridCell.Tab.0.center" timestamp="1609950931339">
-      <screen x="0" y="28" width="1920" height="982" />
+    <state width="1848" height="427" key="GridCell.Tab.0.bottom/72.28.1848.1052@72.28.1848.1052" timestamp="1613381993164" />
+    <state width="1848" height="427" key="GridCell.Tab.0.center" timestamp="1613381993164">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state width="960" height="354" key="GridCell.Tab.0.center/0.28.1920.982@0.28.1920.982" timestamp="1609950931339" />
     <state width="1366" height="12" key="GridCell.Tab.0.center/0.28.3286.982@0.28.3286.982" timestamp="1606818824504" />
-    <state width="960" height="354" key="GridCell.Tab.0.left" timestamp="1609950931338">
-      <screen x="0" y="28" width="1920" height="982" />
+    <state width="1848" height="427" key="GridCell.Tab.0.center/72.28.1848.1052@72.28.1848.1052" timestamp="1613381993164" />
+    <state width="1848" height="427" key="GridCell.Tab.0.left" timestamp="1613381993163">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state width="960" height="354" key="GridCell.Tab.0.left/0.28.1920.982@0.28.1920.982" timestamp="1609950931338" />
     <state width="1366" height="12" key="GridCell.Tab.0.left/0.28.3286.982@0.28.3286.982" timestamp="1606818824503" />
-    <state width="960" height="354" key="GridCell.Tab.0.right" timestamp="1609950931339">
-      <screen x="0" y="28" width="1920" height="982" />
+    <state width="1848" height="427" key="GridCell.Tab.0.left/72.28.1848.1052@72.28.1848.1052" timestamp="1613381993163" />
+    <state width="1848" height="427" key="GridCell.Tab.0.right" timestamp="1613381993164">
+      <screen x="72" y="28" width="1848" height="1052" />
     </state>
     <state width="960" height="354" key="GridCell.Tab.0.right/0.28.1920.982@0.28.1920.982" timestamp="1609950931339" />
     <state width="1366" height="12" key="GridCell.Tab.0.right/0.28.3286.982@0.28.3286.982" timestamp="1606818824504" />
+    <state width="1848" height="427" key="GridCell.Tab.0.right/72.28.1848.1052@72.28.1848.1052" timestamp="1613381993164" />
+    <state x="1080" y="249" key="run.anything.popup" timestamp="1613374859277">
+      <screen x="72" y="28" width="1848" height="1052" />
+    </state>
+    <state x="1080" y="249" key="run.anything.popup/72.28.1848.1052@72.28.1848.1052" timestamp="1613374859277" />
   </component>
 </project>

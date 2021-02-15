@@ -7,6 +7,7 @@
 
 
 #include <memory>
+#include <stack>
 #define BinNodePosi(T) BinNode<T>*
 #define stature(p) ((p) ? p->height : -1 )
 typedef enum
@@ -15,6 +16,8 @@ typedef enum
 }RBColor;
 
 using namespace std;
+
+
 template <typename T>
 struct BinNode
 {
@@ -37,14 +40,17 @@ public:
     BinNodePosi(T) succ();
 
 public:
-    template<typename VST>
-    void travLevel(VST& );
+    //template<typename VST>
+    //void travLevel(VST& );
+
     template <typename VST>
-    void travPre ( VST& ); //子树先序遍历
-    template <typename VST>
-    void travIn ( VST& ); //子树中序遍历
-    template <typename VST>
-    void travPost ( VST& ); //子树后序遍历
+    void travPre ( VST& visit); //子树先序遍历
+
+    //template <typename VST>
+    //void travIn ( VST& ); //子树中序遍历
+
+    //template <typename VST>
+    //void travPost ( VST& ); //子树后序遍历
 
 public:
     bool operator<(BinNode const & bn)
