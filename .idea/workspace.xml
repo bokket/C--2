@@ -28,8 +28,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f419862-f467-4f54-b3cd-e35404056ee6" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/BinNode/BinTree.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BinNode/BinTree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinNode/BinNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/BinNode/BinNode.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BinNode/BinNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/BinNode/BinNode.h" afterDir="false" />
@@ -129,7 +127,7 @@
       <workItem from="1611134309201" duration="19000" />
       <workItem from="1612418363642" duration="66000" />
       <workItem from="1613232897650" duration="1333000" />
-      <workItem from="1613320384161" duration="9385000" />
+      <workItem from="1613320384161" duration="11365000" />
     </task>
     <servers />
   </component>

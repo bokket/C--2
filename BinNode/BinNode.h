@@ -46,8 +46,8 @@ public:
     template <typename VST>
     void travPre ( VST& visit); //子树先序遍历
 
-    //template <typename VST>
-    //void travIn ( VST& ); //子树中序遍历
+    template <typename VST>
+    void travIn ( VST& ); //子树中序遍历
 
     //template <typename VST>
     //void travPost ( VST& ); //子树后序遍历

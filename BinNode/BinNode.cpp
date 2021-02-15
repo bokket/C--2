@@ -29,6 +29,53 @@ int BinNode<T>::size()
     return s;
 }
 
+
+template <typename T>
+template <typename VST>
+void BinNode<T>::travIn(VST & visit)
+{
+    travIn_R(this,visit);
+}
+
+template <typename T,typename VST>
+void travIn_R(BinNodePosi(T) x,VST & visit)
+{
+    if(!x)
+        return;
+    travIn_R(x->lc,visit);
+    visit(x->data);
+    travIn_R(x->rc,visit);
+}
+
+
+template <typename T,typename VST>
+static void goAlongLeftBranch(BinNodePosi(T) x,VST& visit,stack<BinNodePosi(T)>& S)
+{
+    while(x)
+    {
+        S.push(x);
+        x=x->lc;
+    }
+}
+
+template <typename T,typename VST>
+void travIn_l1(BinNodePosi(T) x,VST & visit)
+{
+    stack<BinNodePosi(T)> S;
+    while(true)
+    {
+        goAlongLeftBranch(x,visit,S);
+        if(S.empty())
+            break;
+        x=S.pop();
+
+        visit(x->data);
+        x=x->rc;
+    }
+}
+
+
+
 template <typename T>
 template <typename VST>
 void BinNode<T>::travPre(VST & visit)
