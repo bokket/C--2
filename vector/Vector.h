@@ -37,10 +37,12 @@ public:
     Rank find(T const & e,Rank lo,Rank hi) const;
 
     int deduplicate();
-    //int uniquify();
+    int uniquify();
 
     template<typename VST>
     void traverse(VST&);
+
+    Rank binSearch(T* A,T const &e ,Rank lo,Rank hi);
 public:
     T & operator[] (Rank r) const;
 protected:

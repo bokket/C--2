@@ -109,6 +109,39 @@ int Vector<T>::deduplicate()
     return oldSize-_size;
 }
 
+template<typename T>
+int Vector<T>::uniquify()
+{
+    Rank i=0;
+    Rank j=0;
+
+    while(++j<_size)
+    {
+        if(_elem[i]!=_elem[j])
+            _elem[++i]=_elem[j];
+    }
+    _size=++i;
+    shrink();
+
+    return j-i;
+}
+
+template<typename T>
+Rank Vector<T>::binSearch(T *A, const T &e, Rank lo, Rank hi)
+{
+    while(lo<hi)
+    {
+        int mid=(lo+hi)>>1;
+        if(e<A[mid])
+            hi=mid;
+        if(A[mid]<e)
+            lo=mid+1;
+        if(A[mid]==e)
+            return mid;
+    }
+    return -1;
+}
+
 template <typename T>
 template <typename VST>
 void Vector<T>::traverse(VST & visit)
@@ -133,4 +166,13 @@ Vector<T> & Vector<T>::operator=(const Vector<T> & V)
 
 int main()
 {
+    Vector<int> t1;
+    t1.insert(2);
+    t1.insert(1);
+    t1.insert(1);
+    t1.insert(3);
+    t1.insert(4);
+    //t1.sort();
+    cout <<  t1[2] << endl;
+    return 0;
 }
