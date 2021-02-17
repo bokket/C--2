@@ -5,12 +5,12 @@
 #ifndef BST_BST_H
 #define BST_BST_H
 
-#include "../BinNode/BinNode.h"
+#include "../BinNode/BinTree.h"
 template<typename T>
-class BST: public BinNode<T>
+class BST: public BinTree<T>
 {
 public:
-    virtual BinNodePosi(T) &search(const T & e);
+    virtual BinNodePosi(T) & search(const T & e);
     virtual BinNodePosi(T) insert(const T & e);
     virtual bool remove(const T & e);
 

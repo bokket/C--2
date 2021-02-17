@@ -18,17 +18,17 @@ public:
     BinNodePosi(T) root() const { return _root; }
 
     BinNodePosi(T) insertAsRC(BinNodePosi(T) x,T const &e);
-    BinNodePosi(T) insertAsRL(BinNodePosi(T) x,T const &e);
+    BinNodePosi(T) insertAsLC(BinNodePosi(T) x,T const &e);
 
 public:
-    template<typename VSL>
+    template<typename VST>
     void traverLevel(VST & visit)
     {
         if(_root)
             _root->travLevel(visit);
     }
 
-    template<typename VSL>
+    template<typename VST>
     void travPre(VST & visit)
     {
         if(_root)

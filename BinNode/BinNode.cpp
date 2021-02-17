@@ -18,6 +18,25 @@ BinNode<T> * BinNode<T>::insertAsRC(const T & e)
 }
 
 template <typename T>
+BinNode<T> * BinNode<T>::succ()
+{
+    BinNodePosi(T) s= this;
+
+    if(rc)
+    {
+        s=rc;
+        while(s->lc)
+            s=s->lc;
+    }
+    else
+    {
+        while( !!(s->parent)  && (s==s->parent->rc) )
+            s=s->parent;
+    }
+    return s;
+}
+
+template <typename T>
 int BinNode<T>::size()
 {
     int s=1;
